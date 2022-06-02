@@ -1,9 +1,11 @@
 # Demo Go Wordle API
 A small project demonstrating APIs written in Go. The project contains an API with different routes to play wordle, and a game manager process that generates new games every 2 hours.
 
+API is live at: __gowordle.soreing.site__
+
 ## How to Use
 ### Getting the Current game
-To play the game, you need to get an ID for the current game. Along with the ID, you are given a unix timestamp in milliseconds for the expiry date of the game.
+To play the game, you need to get an ID for the current game. Along with the ID, you are given a unix timestamp in milliseconds for the expiry date of the game. [Click To Try!](https://gowordle.soreing.site/game/current)
 ```
 GET /game/current
 ```
@@ -31,7 +33,7 @@ Output:
 Ok (200)
 ```
 ### Get Game Status
-With a game Id and a player code, you can get your game state with colored letters as follows. Guesses come as an array of strings where each string contains pairs of characters, the capital being the letter and the lower case is the color.
+With a game Id and a player code, you can get your game state with colored letters as follows. Guesses come as an array of strings where each string contains pairs of characters, the capital being the letter and the lower case is the color. [Click To Try!](https://gowordle.soreing.site/game/40/7F11FBEE6AE9DABA)
 ```
 GET /game/:GameId/:PlayerCode
 ```
