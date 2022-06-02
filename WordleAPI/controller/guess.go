@@ -5,12 +5,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"strconv"
 	"time"
+	"strings"
 )
 
 // Makes a new guess from a plaer in a game
 // Inserts the new guess in the database
 func MakeOneGuessInAGame(c *gin.Context){
-	word   := c.PostForm("Word")
+	word   := strings.ToLower(c.PostForm("Word"))
 	player := c.PostForm("Player")
 	game   := c.PostForm("GameId")
 	gameId, err := strconv.Atoi(game)
